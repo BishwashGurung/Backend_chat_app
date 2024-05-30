@@ -20,6 +20,7 @@ io.on("connection", (socket) => {
 	if (userId != "undefined") {
 		userSocketMap[userId] = socket.id;
 	}
+	console.log(`userId is ${userId}`);
 
 	// io.emit() is used to send event to all connected clients
 	io.emit("getOnlineUsers", Object.keys(userSocketMap));
